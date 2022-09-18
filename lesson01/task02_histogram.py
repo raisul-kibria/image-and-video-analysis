@@ -9,33 +9,18 @@ def histogram_find_cuts(nbins: int) -> np.ndarray:
     """Sequence of limits of each bin (e.g. [0.0, 85.0, 170.0, 255.0] for 3 bins)."""
     # YOUR CODE HERE
     # ...
-    return np.arange(nbins+1) * 255 / (nbins)
 
 
 def histogram_count_values(image: np.ndarray, nbins: int) -> np.ndarray:
     """Creates a histogram of a grayscale image."""
     # YOUR CODE HERE
     # ...
-    discretized = (image.astype('float32') * nbins / 255).astype('uint8')
-    hist = np.zeros(nbins)
-    for i in range(discretized.shape[0]):
-        for j in range(discretized.shape[1]):
-            hist[discretized[i, j]] += 1
-    return hist
 
 
 def histogram_plot(image: np.ndarray, nbins) -> None:
     """Plots a histogram of a grayscale image."""
     # YOUR CODE HERE: You can use a bar plot `plt.bar(...)`
     # ...
-    cuts = histogram_find_cuts(nbins=nbins)
-    values = histogram_count_values(image, nbins=nbins)
-
-    centers = (cuts[:-1] + cuts[1:]) / 2
-    plt.bar(centers, values, align='center', width=cuts[1]-cuts[0])
-    if len(cuts) <= 30:
-        plt.xticks(cuts)
-    plt.show()
 
 
 if __name__ == '__main__':
