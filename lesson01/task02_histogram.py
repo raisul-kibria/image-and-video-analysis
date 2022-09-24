@@ -7,14 +7,19 @@ from matplotlib import pyplot as plt
 
 def histogram_find_cuts(nbins: int) -> np.ndarray:
     """Sequence of limits of each bin (e.g. [0.0, 85.0, 170.0, 255.0] for 3 bins)."""
-    # YOUR CODE HERE
+    # YOUR CODE HERE: see `np.linspace(...)` and `np.arange(...)`.
     # ...
 
 
 def histogram_count_values(image: np.ndarray, nbins: int) -> np.ndarray:
     """Creates a histogram of a grayscale image."""
-    # YOUR CODE HERE
-    # ...
+    size_x = image.shape[0]
+    size_y = image.shape[1]
+    for i in range(size_x):
+        for j in range(size_y):
+            value = image[i, j]
+            # YOUR CODE HERE
+            # ...
 
 
 def histogram_plot(image: np.ndarray, nbins) -> None:
