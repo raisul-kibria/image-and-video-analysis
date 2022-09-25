@@ -2,8 +2,8 @@ import unittest
 
 import numpy as np
 
-from lesson01 import task02_histogram as task02
-from lesson01 import task03_intensity_transformations as task03
+import task02_histogram as task02
+import task03_intensity_transformations as task03
 
 
 __unittest = True     # Hide traceback for failed tests.
