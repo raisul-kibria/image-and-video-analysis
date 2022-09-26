@@ -1,6 +1,5 @@
 import math
 import unittest
-
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
@@ -21,7 +20,6 @@ def histogram_find_cuts(nbins: int) -> np.ndarray:
             seq_array.append(max_idx)
             break
     return np.array(seq_array)
-
 
 def histogram_count_values(image: np.ndarray, nbins: int) -> np.ndarray:
     """Creates a histogram of a grayscale image."""
@@ -46,7 +44,6 @@ def histogram_plot(image: np.ndarray, nbins) -> None:
     hist = histogram_count_values(image, nbins)
     plt.bar(range(1, nbins+1), hist)
     plt.show()
-
 
 if __name__ == '__main__':
     # Execute tests for task02.
